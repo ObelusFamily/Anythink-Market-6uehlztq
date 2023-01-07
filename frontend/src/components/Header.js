@@ -21,6 +21,8 @@ const LoggedOutView = () => {
 };
 
 const LoggedInView = (props) => {
+
+  console.log(props);
   return (
     <ul className="navbar-nav ml-auto">
       <li className="nav-item">
@@ -38,7 +40,7 @@ const LoggedInView = (props) => {
       <li className="nav-item">
         <Link to={`/@${props.currentUser.username}`} className="nav-link">
           <img
-            src={props.currentUser.image}
+            src={props.currentUser.image !== null ? props.currentUser.image : "placeholder.png" }
             className="user-pic pr-1"
             alt={props.currentUser.username}
           />
